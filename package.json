@@ -1,0 +1,21 @@
+{
+  "name": "ssr-with-vanila",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "SSR with vanila JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./server/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "jsdom": "^21.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22",
+    "static-server": "^2.2.1"
+  }
+}
