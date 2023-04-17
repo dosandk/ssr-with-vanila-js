@@ -5,6 +5,8 @@ import express from 'express';
 import cors from 'cors';
 import jsdom from "jsdom";
 
+import App from '../client/index.js';
+
 const { JSDOM } = jsdom;
 const __dirname = path.dirname(fileURLToPath(new URL(import.meta.url)));
 
@@ -32,6 +34,7 @@ async function main() {
 
     globalThis.document = document;
 
+    const component = new App();
     const scriptElement = document.createElement('script');
 
     scriptElement.type = 'module';
@@ -41,8 +44,12 @@ async function main() {
       const component = new App();
       const root = document.querySelector('#root');
 
-      root.append(component.element);
+      root.replaceChildren(component.element);
     `;
+
+    const root = document.querySelector('#root');
+
+    root.append(component.element);
 
     document.body.append(scriptElement);
 
